@@ -1,8 +1,3 @@
-# Branch naming rules
-<img alt="GitHub Actions status" src="https://github.com/vidyush/pr_title/workflows/master/badge.svg">
-
-Github action to enforce Pull Request title conventions
-
 ## Usage
 
 See [action.yml](./action.yml)
