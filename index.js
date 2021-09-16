@@ -36,6 +36,9 @@ async function run() {
         });
 
         const title = pullRequest.title;
+        const desc = pullRequest.description;
+        console.log("Description");
+        console.log(desc);
         
         core.info(`Pull Request title: "${title}"`);
 
