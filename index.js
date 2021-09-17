@@ -43,6 +43,7 @@ async function run() {
         core.info(`Pull Request title: "${title}"`);
         
         // Check if description pass regex
+        console.log([[a-bA-B].+-[0-9]+].test(desc))
         console.log(/^(\[REL-.+[0-9]\]|\[CGT-\]|\[PLATFORM-\])$/.test(desc))
         if (/^(\[REL-\]|\[CGT-\]|\[PLATFORM-\])$/.test(desc)){
             console.log(/^(\[REL-\]|\[CGT-\]|\[PLATFORM-\])$/.test(desc))
