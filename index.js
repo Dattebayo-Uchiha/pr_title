@@ -43,11 +43,10 @@ async function run() {
         core.info(`Pull Request title: "${title}"`);
         
         // Check if description pass regex
-        rb ="[[a-bA-B].+-[0-9]+]"
-        rb2=/REL-.+[0-9]|CGT-.+[0-9]|PLATFORM-.+[0-9]/
-        console.log(rb2.test(desc))
-        if (rb2.test(desc)){
-            console.log(/^(\[REL-\]|\[CGT-\]|\[PLATFORM-\])$/.test(desc))
+        const rb2=/REL-.+[0-9]|CGT-.+[0-9]|PLATFORM-.+[0-9]/
+        if (!rb2.test(desc)){
+            core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${rb2} for description`);
+            return
             }
         // Check if title pass regex
         const regex = RegExp(core.getInput('regex'));
