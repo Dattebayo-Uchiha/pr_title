@@ -44,7 +44,7 @@ async function run() {
         
         // Check if description and title pass regex
         const rb2=/REL-.+[0-9]|CGT-.+[0-9]|PLATFORM-.+[0-9]/
-        if (!rb2.test(desc) and !rb2.test(title)){
+        if (!rb2.test(desc) & !rb2.test(title)){
             core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${rb2} for description`);
             core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${rb2} for title`);
             return
