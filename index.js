@@ -44,7 +44,7 @@ async function run() {
         
         // Check if description pass regex
         rb ="[[a-bA-B].+-[0-9]+]"
-        rb2="/^(\[REL-.+[0-9]\]|\[CGT-\]|\[PLATFORM-\])$/"
+        rb2="\[REL-.+[0-9]\]|\[CGT-\]|\[PLATFORM-\]"
         console.log(rb2.match(desc))
         console.log(/^(\[REL-.+[0-9]\]|\[CGT-\]|\[PLATFORM-\])$/.test(desc))
         if (/^(\[REL-\]|\[CGT-\]|\[PLATFORM-\])$/.test(desc)){
