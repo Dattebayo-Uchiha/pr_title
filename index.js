@@ -42,18 +42,19 @@ async function run() {
         
         core.info(`Pull Request title: "${title}"`);
         
-        // Check if description pass regex
+        // Check if description and title pass regex
         const rb2=/REL-.+[0-9]|CGT-.+[0-9]|PLATFORM-.+[0-9]/
-        if (!rb2.test(desc)){
+        if (!rb2.test(desc) and !rb2.test(title)){
             core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${rb2} for description`);
+            core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${rb2} for title`);
             return
             }
         // Check if title pass regex
-        const regex = RegExp(core.getInput('regex'));
-        if (!regex.test(title)) {
-            core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${regex}`);
-            return
-        }
+        //const regex = RegExp(core.getInput('regex'));
+        //if (!regex.test(title)) {
+          //  core.setFailed(`Pull Request title "${title}" failed to pass match regex - ${regex}`);
+            //return
+        //}
 
         // Check min length
         const minLen = parseInt(core.getInput('min_length'));
