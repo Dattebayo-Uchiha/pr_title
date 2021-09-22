@@ -1,0 +1,20 @@
+name: main
+# This workflow is triggered on pushes to the repository.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  build:
+    name: Check
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - name: Validate
+        uses: ./
+        with:
+          github_token: ${{ github.token }}
